@@ -1,0 +1,30 @@
+[
+  {
+    "year": "2024",
+    "title": "PMP® Project Management Professional",
+    "issuer": "Project Management Institute (PMI)",
+    "image": "assets/certs/pmp-cert.jpg",
+    "category": "Project Management"
+  },
+  {
+    "year": "2024",
+    "title": "Esri ArcGIS Desktop Associate",
+    "issuer": "Esri",
+    "image": "assets/certs/esri-desktop.jpg",
+    "category": "GIS & Remote Sensing"
+  },
+  {
+    "year": "2023",
+    "title": "Google Data Analytics Professional",
+    "issuer": "Google / Coursera",
+    "image": "assets/certs/google-data.jpg",
+    "category": "Data Analytics"
+  },
+  {
+    "year": "2022",
+    "title": "Python for Data Science",
+    "issuer": "IBM",
+    "image": "assets/certs/python-ibm.jpg",
+    "category": "Programming"
+  }
+]
