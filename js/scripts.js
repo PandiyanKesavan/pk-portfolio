@@ -141,3 +141,59 @@ function initCarousel() {
         slides[i].classList.remove('hidden');
     }, 3000);
 }
+
+// Add to your DOMContentLoaded listener:
+// initCertSystem();
+
+async function initCertSystem() {
+    const container = document.getElementById('cert-container');
+    const filterButtons = document.querySelectorAll('.cert-filter-btn');
+    if (!container) return;
+
+    try {
+        const response = await fetch('./js/certs.json');
+        const certs = await response.json();
+
+        const renderCerts = (year = 'all') => {
+            container.innerHTML = '';
+            const filtered = certs.filter(c => year === 'all' || c.year === year);
+
+            filtered.forEach(c => {
+                container.innerHTML += `
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 bg-slate-200 overflow-hidden group relative">
+                        <img src="${c.image}" alt="${c.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/400x300?text=Certificate+Image'">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                             <a href="${c.image}" target="_blank" class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest">View Full Certificate</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-blue-600 font-mono text-xs font-bold bg-blue-50 px-2 py-1 rounded">${c.year}</span>
+                            <span class="text-slate-400 text-[10px] uppercase font-bold tracking-widest">${c.category}</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 leading-tight">${c.title}</h3>
+                        <p class="text-slate-500 text-sm mt-1">${c.issuer}</p>
+                    </div>
+                </div>`;
+            });
+        };
+
+        renderCerts();
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-blue-600', 'text-white');
+                    b.classList.add('bg-white', 'text-slate-600');
+                });
+                btn.classList.add('bg-blue-600', 'text-white');
+                btn.classList.remove('bg-white');
+                renderCerts(btn.dataset.year);
+            });
+        });
+
+    } catch (e) {
+        container.innerHTML = "<p class='text-red-500 text-center py-10'>Error loading certificates.</p>";
+    }
+}
