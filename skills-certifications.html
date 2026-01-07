@@ -2,43 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Skills & Certs | GIS Portfolio</title>
+    <title>Certifications | GIS Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/scripts.js" defer></script>
 </head>
 <body class="bg-slate-50">
-    <div class="bg-slate-800 text-white py-12">
+
+    <div class="bg-slate-900 text-white py-12">
         <div class="max-w-4xl mx-auto text-center px-4">
             <div id="carousel" class="h-24 flex items-center justify-center">
-                <div class="cert-slide"><h3 class="text-2xl font-bold italic">GISP® Certified Professional</h3></div>
-                <div class="cert-slide hidden"><h3 class="text-2xl font-bold italic">Esri Enterprise System Design</h3></div>
-                <div class="cert-slide hidden"><h3 class="text-2xl font-bold italic">Google Data Analytics Professional</h3></div>
+                <div class="cert-slide"><h3 class="text-2xl font-bold italic text-cyan-400">PMP® Certified Professional</h3></div>
+                <div class="cert-slide hidden"><h3 class="text-2xl font-bold italic text-blue-400">Esri Technical Certification</h3></div>
+                <div class="cert-slide hidden"><h3 class="text-2xl font-bold italic text-emerald-400">Digital Data Translation Specialist</h3></div>
             </div>
         </div>
     </div>
 
-    <div class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-12">
-        <section>
-            <h2 class="text-2xl font-bold mb-6 border-b-2 border-blue-600 inline-block">Technical Skills</h2>
-            <div class="space-y-4 mt-4">
-                <div>
-                    <h4 class="font-bold text-slate-700">GIS Tools</h4>
-                    <p class="text-slate-600">ArcGIS Pro, QGIS, ENVI, Erdas Imagine, FME</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-700">Programming</h4>
-                    <p class="text-slate-600">Python (ArcPy, PySAL), JavaScript, R (spatial libraries), SQL</p>
-                </div>
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+            <h2 class="text-3xl font-bold text-slate-900">Professional Certifications</h2>
+            <div class="flex flex-wrap gap-2" id="cert-filters">
+                <button class="cert-filter-btn bg-blue-600 text-white px-4 py-2 rounded-full shadow-sm text-sm" data-year="all">All</button>
+                <button class="cert-filter-btn bg-white border text-slate-600 px-4 py-2 rounded-full shadow-sm text-sm" data-year="2024">2024</button>
+                <button class="cert-filter-btn bg-white border text-slate-600 px-4 py-2 rounded-full shadow-sm text-sm" data-year="2023">2023</button>
+                <button class="cert-filter-btn bg-white border text-slate-600 px-4 py-2 rounded-full shadow-sm text-sm" data-year="2022">2022</button>
             </div>
-        </section>
-        
-        <section>
-            <h2 class="text-2xl font-bold mb-6 border-b-2 border-blue-600 inline-block">Certifications</h2>
-            <div class="space-y-2">
-                <p class="bg-white p-3 rounded shadow-sm">GISP - GIS Certification Institute (2025)</p>
-                <p class="bg-white p-3 rounded shadow-sm">PMP - Project Management Institute (2024)</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="cert-container">
             </div>
-        </section>
     </div>
 </body>
 </html>
