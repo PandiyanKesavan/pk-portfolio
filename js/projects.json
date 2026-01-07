@@ -107,43 +107,96 @@
   {
     "year": "2019",
     "title": "High Speed 2 (HS2) Rail Project",
-    "description": "Automated rail data integration workflows using Model Builder and Python scripts.",
-    "tools": ["Model Builder", "Python", "Data Integration"],
+    "description": "Integrated and automated large-scale railway data processing for the HS2 project.",
+    "fullDetails": [
+      "Extracted, preprocessed, and integrated raw data from Excel into spatial feature classes.",
+      "Automated complex data processing workflows using ArcGIS Model Builder and custom Python scripts."
+    ],
+    "tools": ["Model Builder", "Python", "ArcGIS Desktop", "Excel Integration"],
     "role": "GIS Specialist"
   },
   {
     "year": "2019",
     "title": "Transportation Planning Network Analysis",
-    "description": "Conducted Origin-Destination route analysis and extracted spatial attributes for link/node networks.",
-    "tools": ["Network Analyst", "Route Analysis", "Spatial Attributes"],
+    "description": "Conducted advanced route analysis and network modeling for transportation infrastructure.",
+    "fullDetails": [
+      "Converted nodes and links into functional GIS layers using automated Model Builder workflows.",
+      "Conducted Origin-Destination (O-D) route analysis with Network Analyst.",
+      "Applied spatial restrictions and extracted detailed spatial attributes for planning reports."
+    ],
+    "tools": ["Network Analyst", "Model Builder", "Spatial Analysis"],
     "role": "GIS Specialist"
   },
   {
     "year": "2018",
-    "title": "Port of Liverpool RIP Scheme",
-    "description": "Designed Model Builder tools for land referencing and map documentation for road improvements.",
-    "tools": ["OSM Data", "Land Referencing", "Web Apps"],
+    "title": "TPUP & Port of Liverpool: RIP Scheme",
+    "description": "Supported road improvement programs through automated land referencing and web GIS deployment.",
+    "fullDetails": [
+      "Processed OpenStreetMap (OSM) data and designed Model Builder tools for land referencing.",
+      "Automated labeling, numbering, and map documentation workflows.",
+      "Created MXD files, published map services, and developed interactive web apps for stakeholder decision-making."
+    ],
+    "tools": ["OSM Data", "ArcGIS Server", "Web App Builder", "Python"],
     "role": "GIS Analyst"
   },
   {
     "year": "2018",
     "title": "Wessex CP6 Asset Management",
-    "description": "Automated map production with Python notebooks and managed base maps for field collection.",
-    "tools": ["Python Notebooks", "Collector App", "Asset Mapping"],
+    "description": "Streamlined asset mapping and map production for regional infrastructure management.",
+    "fullDetails": [
+      "Managed critical locational data and collected comprehensive base maps.",
+      "Automated large-scale map production using Jupyter/Python notebooks.",
+      "Utilized ArcGIS Collector App for field data synchronization and accuracy."
+    ],
+    "tools": ["Python Notebooks", "ArcGIS Collector", "Field Data Collection"],
     "role": "GIS Specialist"
   },
   {
+    "year": "2018",
+    "title": "Skip Pool Improvement Scheme",
+    "description": "Produced specialized geological and hydrological maps for infrastructure planning.",
+    "fullDetails": [
+      "Successfully migrated A585 spatial layers into a centralized GIS environment.",
+      "Produced detailed geological maps for superficial deposits and aquifers.",
+      "Mapped groundwater flooding risks to inform site safety and engineering."
+    ],
+    "tools": ["Geological Mapping", "Hydrology", "Data Migration"],
+    "role": "GIS Mapping"
+  },
+  {
     "year": "2015",
-    "title": "Minor Irrigation Project (West Bengal)",
-    "description": "Conducted 10-year LULC and crop classification using digital image analysis and change detection.",
-    "tools": ["LULC", "Change Detection", "Satellite Imagery"],
+    "title": "West Bengal Minor Irrigation Project",
+    "description": "Performed decade-long remote sensing analysis for agricultural resource management.",
+    "fullDetails": [
+      "Conducted advanced digital image analysis on multi-temporal satellite data.",
+      "Developed 10+ years of Land Use/Land Cover (LULC) and crop classification maps.",
+      "Performed change detection analysis and estimated agricultural yields."
+    ],
+    "tools": ["Remote Sensing", "Digital Image Processing", "LULC", "Change Detection"],
+    "role": "Remote Sensing Analyst"
+  },
+  {
+    "year": "2015",
+    "title": "Mining Area Environmental Impact Assessment",
+    "description": "Analyzed environmental degradation and spatial coverage of mining regions.",
+    "fullDetails": [
+      "Processed LISS-4 satellite data to monitor environmental changes.",
+      "Mapped land use/land cover specifically within mining impact zones.",
+      "Calculated spatial coverage of mining activities and visualized affected ecological regions."
+    ],
+    "tools": ["LISS-4", "EIA", "Satellite Processing", "Visualization"],
     "role": "Remote Sensing Analyst"
   },
   {
     "year": "2014",
-    "title": "Texture Driven Regional Data Analysis",
-    "description": "Designed image segmentation techniques and applied SVM classification for post-classification change detection.",
-    "tools": ["Image Segmentation", "SVM", "Remote Sensing"],
+    "title": "Texture-Driven Regional Data Analysis",
+    "description": "Research-focused regional analysis using advanced image segmentation and machine learning.",
+    "fullDetails": [
+      "Designed and implemented complex image segmentation techniques for urban analysis.",
+      "Applied Support Vector Machine (SVM) classification to high-resolution imagery.",
+      "Performed post-classification change detection in South Chennai to identify urban growth patterns."
+    ],
+    "tools": ["Image Segmentation", "SVM", "Machine Learning", "South Chennai Data"],
     "role": "Remote Sensing Analyst"
   }
 ]
