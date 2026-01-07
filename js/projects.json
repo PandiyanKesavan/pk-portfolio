@@ -1,29 +1,149 @@
 [
   {
-    "id": 1,
-    "title": "Wildfire Risk Dashboard",
-    "year": "2026",
-    "description": "Real-time monitoring using Sentinel-2 satellite imagery and ArcGIS Velocity.",
-    "tools": ["Python", "ArcGIS Online", "Remote Sensing"],
-    "role": "Technical Lead",
-    "link": "#"
-  },
-  {
-    "id": 2,
-    "title": "Urban Canopy Analysis",
-    "year": "2025",
-    "description": "High-resolution LiDAR processing to determine municipal tree equity scores.",
-    "tools": ["QGIS", "PostGIS", "R"],
-    "role": "GIS Analyst",
-    "link": "#"
-  },
-  {
-    "id": 3,
-    "title": "Hydrographic Modeling",
     "year": "2024",
-    "description": "Automated watershed delineation and flood plain mapping for regional planning.",
-    "tools": ["ArcHydro", "Python", "ModelBuilder"],
-    "role": "Research Assistant",
-    "link": "#"
+    "title": "MDEM Website Viewer Development",
+    "description": "Designed and developed a statewide Cadastral and Flood Web GIS Viewer for real-time access to geospatial data for Mississippi.",
+    "tools": ["ArcGIS JS API", "Enterprise Geodatabase", "FEMA Data"],
+    "role": "Web GIS Developer"
+  },
+  {
+    "year": "2024",
+    "title": "MDEM: Mississippi Contour Development (1ft & 2ft)",
+    "description": "Managed creation of high-resolution topographic datasets and oversaw automated quality control validation.",
+    "tools": ["Topographic Analysis", "Automated QA/QC", "Lidar"],
+    "role": "Project Lead"
+  },
+  {
+    "year": "2024",
+    "title": "MDEM: Elevation Derived Hydrography (EDH)",
+    "description": "Coordinated hydrographic feature extraction using elevation data and integrated manual/automated QC checks.",
+    "tools": ["EDH", "Hydrography", "Elevation Data"],
+    "role": "Project Coordinator"
+  },
+  {
+    "year": "2024",
+    "title": "Watershed Planning Project, Mississippi",
+    "description": "Developed public-facing Hub sites and Stormwater Management programs for Bolivar and Sunflower Counties.",
+    "tools": ["ArcGIS Hub", "HTML/CSS", "Bootstrap"],
+    "role": "Web GIS Developer"
+  },
+  {
+    "year": "2023",
+    "title": "Stormwater Assessment & Management",
+    "description": "Developed automated impervious surface extraction tools for fee calculation in Rankin & Madison County.",
+    "tools": ["Python", "ArcGIS Tool Development", "WebApp Builder"],
+    "role": "GIS Consultant"
+  },
+  {
+    "year": "2023",
+    "title": "Town of Sardis & Crawford Utility GIS",
+    "description": "Managed utility geodatabases, created custom map books, and deployed mobile field survey applications.",
+    "tools": ["Geodatabase Design", "ArcGIS Online", "Field Maps"],
+    "role": "GIS Consultant"
+  },
+  {
+    "year": "2022",
+    "title": "Water Treatment Plant Site Investigation",
+    "description": "Developed workflow and dashboards for tracking water treatment issues and digital survey collection.",
+    "tools": ["Dashboards", "Survey123", "Workflow Optimization"],
+    "role": "Web GIS Developer"
+  },
+  {
+    "year": "2022",
+    "title": "DeSoto County Rural Broadband Program",
+    "description": "Designed GIS databases to track broadband service locations and field survey status.",
+    "tools": ["ArcGIS Server", "Online Dashboards", "Database Design"],
+    "role": "GIS Developer"
+  },
+  {
+    "year": "2022",
+    "title": "City of Meridian Public Works Automation",
+    "description": "Automated CAD-to-GIS conversion and sewer network modeling with digital monitoring dashboards.",
+    "tools": ["CAD Integration", "Sewer Network Modeling", "Automation"],
+    "role": "GIS Specialist"
+  },
+  {
+    "year": "2021",
+    "title": "MDEM: National Hydrography Dataset (NHD)",
+    "description": "Designed geodatabases and developed ArcPy tools to automate stream extraction for Mississippi.",
+    "tools": ["ArcPy", "NHD", "Spatial QC"],
+    "role": "GIS Developer"
+  },
+  {
+    "year": "2021",
+    "title": "Machine Learning Vegetation Classification",
+    "description": "Applied SVM and Random Forest classification to UAS multispectral imagery with 90% accuracy.",
+    "tools": ["Machine Learning", "SVM", "Random Forest", "UAS"],
+    "role": "Research Scientist"
+  },
+  {
+    "year": "2020",
+    "title": "3D Shoreline Change Detection (JILONA)",
+    "description": "Developed Python scripts for linear regression analysis of shoreline change (1953–2020) using UAV imagery.",
+    "tools": ["Python", "Change Detection", "UAV", "Geostatistics"],
+    "role": "Geospatial Analyst"
+  },
+  {
+    "year": "2020",
+    "title": "Watershed Master Plan (Florida)",
+    "description": "Created groundwater layers and probability flood inundation maps using CASCADE modeling.",
+    "tools": ["Remote Sensing", "CASCADE", "Flood Modeling"],
+    "role": "Remote Sensing & GIS Researcher"
+  },
+  {
+    "year": "2020",
+    "title": "Find Nearby Places (PostGIS)",
+    "description": "Built a PostgreSQL/PostGIS database to perform spatial proximity queries and QGIS visualization.",
+    "tools": ["PostgreSQL", "PostGIS", "QGIS"],
+    "role": "GIS Developer"
+  },
+  {
+    "year": "2020",
+    "title": "Crime Hotspot Analysis",
+    "description": "Developed web applications to calculate crime densities and generate hotspot/cold spot maps.",
+    "tools": ["ArcGIS JS API", "Spatial Statistics", "Web Maps"],
+    "role": "GIS Developer"
+  },
+  {
+    "year": "2019",
+    "title": "High Speed 2 (HS2) Rail Project",
+    "description": "Automated rail data integration workflows using Model Builder and Python scripts.",
+    "tools": ["Model Builder", "Python", "Data Integration"],
+    "role": "GIS Specialist"
+  },
+  {
+    "year": "2019",
+    "title": "Transportation Planning Network Analysis",
+    "description": "Conducted Origin-Destination route analysis and extracted spatial attributes for link/node networks.",
+    "tools": ["Network Analyst", "Route Analysis", "Spatial Attributes"],
+    "role": "GIS Specialist"
+  },
+  {
+    "year": "2018",
+    "title": "Port of Liverpool RIP Scheme",
+    "description": "Designed Model Builder tools for land referencing and map documentation for road improvements.",
+    "tools": ["OSM Data", "Land Referencing", "Web Apps"],
+    "role": "GIS Analyst"
+  },
+  {
+    "year": "2018",
+    "title": "Wessex CP6 Asset Management",
+    "description": "Automated map production with Python notebooks and managed base maps for field collection.",
+    "tools": ["Python Notebooks", "Collector App", "Asset Mapping"],
+    "role": "GIS Specialist"
+  },
+  {
+    "year": "2015",
+    "title": "Minor Irrigation Project (West Bengal)",
+    "description": "Conducted 10-year LULC and crop classification using digital image analysis and change detection.",
+    "tools": ["LULC", "Change Detection", "Satellite Imagery"],
+    "role": "Remote Sensing Analyst"
+  },
+  {
+    "year": "2014",
+    "title": "Texture Driven Regional Data Analysis",
+    "description": "Designed image segmentation techniques and applied SVM classification for post-classification change detection.",
+    "tools": ["Image Segmentation", "SVM", "Remote Sensing"],
+    "role": "Remote Sensing Analyst"
   }
 ]
