@@ -4,13 +4,21 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Shared components
+    // Shared components rendered on every page load
     renderComponents();
     
-    // Page-specific initializations
-    initProjectSystem();
-    initCertSystem();
-    initCarousel();
+    // Page-specific initializations based on element presence
+    if (document.getElementById('project-container')) {
+        initProjectSystem();
+    }
+    
+    if (document.getElementById('cert-container')) {
+        initCertSystem();
+    }
+    
+    if (document.querySelector('.cert-slide')) {
+        initCarousel();
+    }
 });
 
 // 1. Inject Navigation and Footer (Shared across all pages)
@@ -38,12 +46,11 @@ function renderComponents() {
     document.body.insertAdjacentHTML('beforeend', footerHTML);
 }
 
-// 2. Project System (Used in projects.html)
+// 2. Project System (Logic for projects.html)
 async function initProjectSystem() {
     const container = document.getElementById('project-container');
     const searchInput = document.getElementById('project-search');
     const filterButtons = document.querySelectorAll('.filter-btn');
-    if (!container) return;
 
     try {
         const response = await fetch('./js/projects.json');
@@ -54,10 +61,10 @@ async function initProjectSystem() {
             const searchStr = query.toLowerCase();
 
             const filtered = projects.filter(p => {
-                const matchesYear = year === 'all' || p.year === year;
+                const matchesYear = year === 'all' || p.year === String(year);
                 const matchesSearch = p.title.toLowerCase().includes(searchStr) || 
                                     p.description.toLowerCase().includes(searchStr) ||
-                                    p.tools.some(t => t.toLowerCase().includes(searchStr));
+                                    (p.tools && p.tools.some(t => t.toLowerCase().includes(searchStr)));
                 return matchesYear && matchesSearch;
             });
 
@@ -68,27 +75,28 @@ async function initProjectSystem() {
 
             filtered.forEach((p, index) => {
                 const detailId = `details-${index}`;
+                // Use the exquisite glass-card class for the theme
                 container.innerHTML += `
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-blue-400 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                <div class="glass-card p-6 flex flex-col h-full">
                     <div class="flex justify-between items-start mb-3">
-                        <span class="text-blue-600 font-mono text-xs font-bold bg-blue-50 px-2 py-1 rounded">${p.year}</span>
-                        <span class="text-slate-400 text-[10px] uppercase font-bold tracking-widest">${p.role}</span>
+                        <span class="text-emerald-400 font-mono text-xs font-bold bg-emerald-400/10 px-2 py-1 rounded border border-emerald-400/20">${p.year}</span>
+                        <span class="text-sky-400 text-[10px] uppercase font-bold tracking-widest">${p.role || 'Professional'}</span>
                     </div>
-                    <h3 class="font-bold text-lg text-slate-900 mb-2 leading-tight">${p.title}</h3>
-                    <p class="text-slate-500 text-sm mb-4">${p.description}</p>
+                    <h3 class="font-bold text-lg text-white mb-2 leading-tight">${p.title}</h3>
+                    <p class="text-slate-300 text-sm mb-4">${p.description}</p>
                     
-                    <div id="${detailId}" class="hidden mb-6 mt-2 p-4 bg-slate-50 rounded-xl border-l-4 border-blue-400">
-                        <ul class="text-xs text-slate-600 space-y-2 list-disc list-inside">
-                            ${p.fullDetails ? p.fullDetails.map(detail => `<li>${detail}</li>`).join('') : '<li>Details coming soon...</li>'}
+                    <div id="${detailId}" class="hidden mb-6 mt-2 p-4 bg-slate-800/50 rounded-xl border-l-4 border-emerald-400">
+                        <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside">
+                            ${p.fullDetails ? p.fullDetails.map(detail => `<li>${detail}</li>`).join('') : '<li>Detailed information coming soon.</li>'}
                         </ul>
                     </div>
 
-                    <button onclick="toggleDetails('${detailId}')" class="text-blue-600 text-xs font-bold hover:underline text-left mb-6 focus:outline-none">
+                    <button onclick="toggleDetails('${detailId}')" class="text-emerald-400 text-xs font-bold hover:underline text-left mb-6 focus:outline-none">
                         + View Project Details
                     </button>
 
-                    <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-50 mt-auto">
-                        ${p.tools.map(t => `<span class="bg-slate-50 text-slate-600 text-[10px] px-2 py-1 rounded border border-slate-100 font-semibold">${t}</span>`).join('')}
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10 mt-auto">
+                        ${p.tools ? p.tools.map(t => `<span class="bg-white/5 text-slate-300 text-[10px] px-2 py-1 rounded border border-white/10 font-semibold">${t}</span>`).join('') : ''}
                     </div>
                 </div>`;
             });
@@ -117,15 +125,14 @@ async function initProjectSystem() {
         }
 
     } catch (e) { 
-        container.innerHTML = "<p class='text-red-500 text-center py-10'>Error loading the project database.</p>"; 
+        container.innerHTML = "<p class='text-red-400 text-center py-10'>Error loading the project database.</p>"; 
     }
 }
 
-// 3. Certificate System (Used in skills-certifications.html)
+// 3. Certificate System (Logic for skills-certifications.html)
 async function initCertSystem() {
     const container = document.getElementById('cert-container');
     const filterButtons = document.querySelectorAll('.cert-filter-btn');
-    if (!container) return;
 
     try {
         const response = await fetch('./js/certs.json');
@@ -133,7 +140,7 @@ async function initCertSystem() {
 
         const renderCerts = (year = 'all') => {
             container.innerHTML = '';
-            const filtered = certs.filter(c => year === 'all' || c.year === year);
+            const filtered = certs.filter(c => year === 'all' || c.year === String(year));
 
             if (filtered.length === 0) {
                 container.innerHTML = '<p class="text-slate-400 col-span-full text-center py-10">No certificates found for this year.</p>';
@@ -142,20 +149,20 @@ async function initCertSystem() {
 
             filtered.forEach(c => {
                 container.innerHTML += `
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300">
-                    <div class="h-48 bg-slate-200 overflow-hidden group relative">
-                        <img src="${c.image}" alt="${c.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/400x300?text=Certificate+Image'">
+                <div class="glass-card overflow-hidden flex flex-col h-full">
+                    <div class="h-48 bg-slate-800/50 overflow-hidden group relative">
+                        <img src="${c.image}" alt="${c.title}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500" onerror="this.src='https://via.placeholder.com/400x300?text=Certificate+Image'">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                             <a href="${c.image}" target="_blank" class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-blue-500 hover:text-white transition shadow-lg">View Full Certificate</a>
+                             <a href="${c.image}" target="_blank" class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-emerald-500 hover:text-white transition shadow-lg">View Full Certificate</a>
                         </div>
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <span class="text-blue-600 font-mono text-xs font-bold bg-blue-50 px-2 py-1 rounded">${c.year}</span>
-                            <span class="text-slate-400 text-[10px] uppercase font-bold tracking-widest">${c.category}</span>
+                            <span class="text-emerald-400 font-mono text-xs font-bold bg-emerald-400/10 px-2 py-1 rounded border border-emerald-400/20">${c.year}</span>
+                            <span class="text-sky-400 text-[10px] uppercase font-bold tracking-widest">${c.category || 'Certification'}</span>
                         </div>
-                        <h3 class="font-bold text-lg text-slate-900 leading-tight">${c.title}</h3>
-                        <p class="text-slate-500 text-sm mt-1">${c.issuer}</p>
+                        <h3 class="font-bold text-lg text-white leading-tight">${c.title}</h3>
+                        <p class="text-slate-400 text-sm mt-1">${c.issuer}</p>
                     </div>
                 </div>`;
             });
@@ -170,20 +177,20 @@ async function initCertSystem() {
                     b.classList.add('bg-white', 'text-slate-600');
                 });
                 btn.classList.add('bg-blue-600', 'text-white');
-                btn.classList.remove('bg-white', 'text-slate-600');
+                btn.classList.remove('bg-white');
                 renderCerts(btn.dataset.year);
             });
         });
 
     } catch (e) {
-        container.innerHTML = "<p class='text-red-500 text-center py-10'>Error loading certificates.</p>";
+        container.innerHTML = "<p class='text-red-400 text-center py-10'>Error loading certificates.</p>";
     }
 }
 
-// 4. Utility: Global Toggle Function for Project Details
+// 4. Global Toggle Function for Project Details
 window.toggleDetails = function(id) {
     const element = document.getElementById(id);
-    const button = element.nextElementSibling;
+    const button = element.target || event.target;
     
     if (element.classList.contains('hidden')) {
         element.classList.remove('hidden');
@@ -194,14 +201,15 @@ window.toggleDetails = function(id) {
     }
 };
 
-// 5. Utility: Certification Carousel Logic (Homepage/Skills top)
+// 5. Certification Carousel Logic
 function initCarousel() {
     const slides = document.querySelectorAll('.cert-slide');
-    if (!slides.length) return;
+    if (slides.length <= 1) return;
+    
     let i = 0;
     setInterval(() => {
         slides[i].classList.add('hidden');
         i = (i + 1) % slides.length;
         slides[i].classList.remove('hidden');
-    }, 3000);
+    }, 4000); // 4 seconds interval for better readability
 }
