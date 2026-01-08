@@ -50,3 +50,28 @@ nav {
 ::-webkit-scrollbar-thumb:hover {
     background: #4ade80; /* Green accent */
 }
+
+/* Custom Header Extensions */
+.glass-card {
+    background: rgba(15, 23, 42, 0.4); /* Dark translucent base */
+    backdrop-filter: blur(15px) saturate(160%);
+    -webkit-backdrop-filter: blur(15px) saturate(160%);
+    border-radius: 2rem;
+}
+
+/* Tracking Tight for Professional Titles */
+.tracking-tight {
+    letter-spacing: -0.025em;
+}
+
+/* Highlighting keywords inside the bio text */
+header span.font-bold {
+    text-shadow: 0 0 10px rgba(52, 211, 153, 0.3);
+}
+
+/* Ensure the header text pops against the 3D relief map */
+h1 {
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
