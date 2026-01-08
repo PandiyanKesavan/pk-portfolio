@@ -1,77 +1,62 @@
-/* --- Exquisite Topographic Theme --- */
+/* --- Exquisite Technical Theme --- */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    color: #f1f5f9;
-    /* Using your selected Unsplash Image */
-    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+    color: #f1f5f9; /* Light text for dark background */
+    /* Fixed Topographic Background */
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
                 url('https://images.unsplash.com/photo-1625425405800-be8054129584?q=80&w=1127&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-/* --- Navigation Glass Effect --- */
+/* --- Navigation & Search --- */
 nav {
     background: rgba(15, 23, 42, 0.9) !important;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* --- High-End Glass Cards --- */
+#project-search {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* --- Exquisite Glass Cards --- */
 .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1.5rem;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
 }
 
 .glass-card:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(34, 197, 94, 0.5); /* Emerald Green glow from image */
-    transform: translateY(-8px) scale(1.01);
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(16, 185, 129, 0.5); /* Emerald glow */
+    transform: translateY(-8px);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* --- Custom Scrollbar for Smooth Feel --- */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: #0f172a;
-}
-::-webkit-scrollbar-thumb {
-    background: #334155;
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #4ade80; /* Green accent */
+/* --- Tags & Details --- */
+.tech-tag {
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8; /* Sky Blue */
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
 }
 
-/* Custom Header Extensions */
-.glass-card {
-    background: rgba(15, 23, 42, 0.4); /* Dark translucent base */
-    backdrop-filter: blur(15px) saturate(160%);
-    -webkit-backdrop-filter: blur(15px) saturate(160%);
-    border-radius: 2rem;
+.details-box {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid #10b981; /* Emerald border */
+    margin-bottom: 1rem;
 }
-
-/* Tracking Tight for Professional Titles */
-.tracking-tight {
-    letter-spacing: -0.025em;
-}
-
-/* Highlighting keywords inside the bio text */
-header span.font-bold {
-    text-shadow: 0 0 10px rgba(52, 211, 153, 0.3);
-}
-
-/* Ensure the header text pops against the 3D relief map */
-h1 {
-    color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
