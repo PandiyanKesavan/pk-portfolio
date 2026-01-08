@@ -1,15 +1,19 @@
 /**
  * GIS Portfolio Main Script
- * Handles Navigation, Footer, Project System with Expandable Details, and Carousel.
+ * Handles Navigation, Footer, Project System, Certificate System, and Carousel.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Shared components
     renderComponents();
+    
+    // Page-specific initializations
     initProjectSystem();
+    initCertSystem();
     initCarousel();
 });
 
-// 1. Inject Navigation and Footer
+// 1. Inject Navigation and Footer (Shared across all pages)
 function renderComponents() {
     const navHTML = `
     <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
@@ -34,7 +38,7 @@ function renderComponents() {
     document.body.insertAdjacentHTML('beforeend', footerHTML);
 }
 
-// 2. Project System with Search, Filter, and Expandable Bullets
+// 2. Project System (Used in projects.html)
 async function initProjectSystem() {
     const container = document.getElementById('project-container');
     const searchInput = document.getElementById('project-search');
@@ -45,7 +49,7 @@ async function initProjectSystem() {
         const response = await fetch('./js/projects.json');
         const projects = await response.json();
 
-        const render = (year = 'all', query = '') => {
+        const renderProjects = (year = 'all', query = '') => {
             container.innerHTML = '';
             const searchStr = query.toLowerCase();
 
@@ -90,9 +94,8 @@ async function initProjectSystem() {
             });
         };
 
-        render();
+        renderProjects();
 
-        // Filter Event Listeners
         filterButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterButtons.forEach(b => {
@@ -101,50 +104,24 @@ async function initProjectSystem() {
                 });
                 btn.classList.add('bg-blue-600', 'text-white');
                 btn.classList.remove('bg-white');
-                render(btn.dataset.year, searchInput.value);
+                renderProjects(btn.dataset.year, searchInput ? searchInput.value : '');
             });
         });
 
-        // Search Event Listener
-        searchInput.addEventListener('input', (e) => {
-            const activeBtn = document.querySelector('.filter-btn.bg-blue-600');
-            render(activeBtn.dataset.year, e.target.value);
-        });
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const activeBtn = document.querySelector('.filter-btn.bg-blue-600');
+                const currentYear = activeBtn ? activeBtn.dataset.year : 'all';
+                renderProjects(currentYear, e.target.value);
+            });
+        }
 
     } catch (e) { 
         container.innerHTML = "<p class='text-red-500 text-center py-10'>Error loading the project database.</p>"; 
     }
 }
 
-// 3. Global Toggle Function for Project Details
-window.toggleDetails = function(id) {
-    const element = document.getElementById(id);
-    const button = element.nextElementSibling;
-    
-    if (element.classList.contains('hidden')) {
-        element.classList.remove('hidden');
-        button.innerText = "- Hide Project Details";
-    } else {
-        element.classList.add('hidden');
-        button.innerText = "+ View Project Details";
-    }
-};
-
-// 4. Certification Carousel Logic
-function initCarousel() {
-    const slides = document.querySelectorAll('.cert-slide');
-    if (!slides.length) return;
-    let i = 0;
-    setInterval(() => {
-        slides[i].classList.add('hidden');
-        i = (i + 1) % slides.length;
-        slides[i].classList.remove('hidden');
-    }, 3000);
-}
-
-// Add to your DOMContentLoaded listener:
-// initCertSystem();
-
+// 3. Certificate System (Used in skills-certifications.html)
 async function initCertSystem() {
     const container = document.getElementById('cert-container');
     const filterButtons = document.querySelectorAll('.cert-filter-btn');
@@ -158,13 +135,18 @@ async function initCertSystem() {
             container.innerHTML = '';
             const filtered = certs.filter(c => year === 'all' || c.year === year);
 
+            if (filtered.length === 0) {
+                container.innerHTML = '<p class="text-slate-400 col-span-full text-center py-10">No certificates found for this year.</p>';
+                return;
+            }
+
             filtered.forEach(c => {
                 container.innerHTML += `
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300">
                     <div class="h-48 bg-slate-200 overflow-hidden group relative">
                         <img src="${c.image}" alt="${c.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/400x300?text=Certificate+Image'">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                             <a href="${c.image}" target="_blank" class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest">View Full Certificate</a>
+                             <a href="${c.image}" target="_blank" class="bg-white text-slate-900 px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-blue-500 hover:text-white transition shadow-lg">View Full Certificate</a>
                         </div>
                     </div>
                     <div class="p-6">
@@ -188,7 +170,7 @@ async function initCertSystem() {
                     b.classList.add('bg-white', 'text-slate-600');
                 });
                 btn.classList.add('bg-blue-600', 'text-white');
-                btn.classList.remove('bg-white');
+                btn.classList.remove('bg-white', 'text-slate-600');
                 renderCerts(btn.dataset.year);
             });
         });
@@ -196,4 +178,30 @@ async function initCertSystem() {
     } catch (e) {
         container.innerHTML = "<p class='text-red-500 text-center py-10'>Error loading certificates.</p>";
     }
+}
+
+// 4. Utility: Global Toggle Function for Project Details
+window.toggleDetails = function(id) {
+    const element = document.getElementById(id);
+    const button = element.nextElementSibling;
+    
+    if (element.classList.contains('hidden')) {
+        element.classList.remove('hidden');
+        button.innerText = "- Hide Project Details";
+    } else {
+        element.classList.add('hidden');
+        button.innerText = "+ View Project Details";
+    }
+};
+
+// 5. Utility: Certification Carousel Logic (Homepage/Skills top)
+function initCarousel() {
+    const slides = document.querySelectorAll('.cert-slide');
+    if (!slides.length) return;
+    let i = 0;
+    setInterval(() => {
+        slides[i].classList.add('hidden');
+        i = (i + 1) % slides.length;
+        slides[i].classList.remove('hidden');
+    }, 3000);
 }
