@@ -13,23 +13,27 @@
             <input type="text" id="project-search" placeholder="Search by tool (e.g. Python)..." class="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none">
         </div>
         
-        <div class="flex flex-wrap gap-2 mb-10">
-            <button class="filter-btn bg-blue-600 text-white px-4 py-2 rounded-full shadow-sm text-sm" data-year="all">All Projects</button>
-            <button class="filter-btn bg-white border text-slate-600 px-4 py-2 rounded-full shadow-sm text-sm" data-year="2024">2024</button>
-            <button class="filter-btn bg-white border text-slate-600 px-4 py-2 rounded-full shadow-sm text-sm" data-year="2023">2023</button>
-            <button class="filter-btn bg-white border text-slate-600 px-4 py-2 rounded-full shadow-sm text-sm" data-year="2022">2022</button>
-            <button class="filter-btn bg-white border text-slate-600 px-4 py-2 rounded-full shadow-sm text-sm" data-year="2021">2021</button>
-            <button class="filter-btn bg-white border text-slate-600 px-4 py-2 rounded-full shadow-sm text-sm" data-year="2020">2020</button>
-            <button class="filter-btn bg-white border text-slate-600 px-4 py-2 rounded-full shadow-sm text-sm" data-year="2019">2019</button>
-            <button class="filter-btn bg-white border text-slate-600 px-4 py-2 rounded-full shadow-sm text-sm" data-year="2018">2018</button>
-            <button class="filter-btn bg-white border text-slate-600 px-4 py-2 rounded-full shadow-sm text-sm" data-year="2015">2015</button>
-            <button class="filter-btn bg-white border text-slate-600 px-4 py-2 rounded-full shadow-sm text-sm" data-year="2014">2014</button>
-        </div>
+            <div class="max-w-6xl mx-auto px-4 mb-12 relative z-10">
+                <h2 class="text-xs uppercase tracking-[0.2em] text-emerald-400 font-bold mb-6">Filter by Project Year</h2>
+                <div class="flex flex-wrap gap-3" id="filter-container">
+                    <button class="filter-btn active-filter" data-year="all">All Projects</button>
+                    <button class="filter-btn" data-year="2024">2024</button>
+                    <button class="filter-btn" data-year="2023">2023</button>
+                    <button class="filter-btn" data-year="2022">2022</button>
+                    <button class="filter-btn" data-year="2021">2021</button>
+                    <button class="filter-btn" data-year="2020">2020</button>
+                    <button class="filter-btn" data-year="2019">2019</button>
+                    <button class="filter-btn" data-year="2018">2018</button>
+                    <button class="filter-btn" data-year="2015">2015</button>
+                    <button class="filter-btn" data-year="2014">2014</button>
+                </div>
+            </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-container"></div>
     </div>
 </body>
 
 </html>
+
 
 
