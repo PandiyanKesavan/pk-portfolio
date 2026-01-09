@@ -252,3 +252,38 @@ filtered.forEach((p, index) => {
         </div>
     </div>`;
 });
+
+// Replace the card template in your renderProjects function
+filtered.forEach((p, index) => {
+    const detailId = `details-${index}`;
+    container.innerHTML += `
+    <div class="glass-card p-6 flex flex-col h-full border border-white/10 transition-all duration-300 hover:border-emerald-500/50">
+        <div class="flex justify-between items-start mb-4">
+            <span class="bg-sky-500/20 text-sky-400 font-mono text-[10px] px-2 py-1 rounded border border-sky-500/30 uppercase tracking-wider font-bold">
+                ${p.year}
+            </span>
+            <span class="text-slate-500 text-[10px] uppercase font-bold tracking-widest">
+                ${p.role || 'Project'}
+            </span>
+        </div>
+        
+        <h3 class="text-xl mb-2 leading-tight">${p.title}</h3>
+        
+        <p class="text-sm mb-4 leading-relaxed">${p.description}</p>
+        
+        <div id="${detailId}" class="hidden mb-6 mt-2 p-4 bg-black/40 rounded-xl border-l-2 border-emerald-500">
+            <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside">
+                ${p.fullDetails ? p.fullDetails.map(detail => `<li>${detail}</li>`).join('') : '<li>Advanced technical data available.</li>'}
+            </ul>
+        </div>
+
+        <button onclick="toggleDetails('${detailId}')" class="text-emerald-400 text-xs font-bold hover:text-emerald-300 transition-colors text-left mb-6 focus:outline-none uppercase tracking-wide">
+            + View Project Details
+        </button>
+
+        <div class="flex flex-wrap gap-2 pt-4 border-t border-white/5 mt-auto">
+            ${p.tools ? p.tools.map(t => `<span class="bg-white/5 text-slate-400 text-[10px] px-2 py-1 rounded border border-white/10 font-semibold tracking-tight">${t}</span>`).join('') : ''}
+        </div>
+    </div>`;
+});
+
