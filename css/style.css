@@ -1,218 +1,172 @@
-/* --- Exquisite Technical Theme --- */
+/**
+ * GIS Portfolio Master Stylesheet
+ * Architecture: High-Contrast Glassmorphism
+ * Optimized for: Performance and Accessibility
+ */
+
+/* --- 1. Design Tokens & Variables --- */
+:root {
+    --bg-dark: #0f172a;               /* Deep Slate 950 */
+    --emerald-brand: #10b981;        /* Emerald 500 */
+    --sky-brand: #0ea5e9;            /* Sky 500 */
+    --slate-text: #cbd5e1;           /* Slate 300 */
+    --glass-bg: rgba(15, 23, 42, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --transition-standard: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- 2. Global Foundation --- */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    color: #f1f5f9; /* Light text for dark background */
-    /* Fixed Topographic Background */
-    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
-                url('https://images.unsplash.com/photo-1625425405800-be8054129584?q=80&w=1127&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-/* --- Navigation & Search --- */
-nav {
-    background: rgba(15, 23, 42, 0.9) !important;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-#project-search {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
-/* --- Exquisite Glass Cards --- */
-.glass-card {
-    background: rgba(30, 41, 59, 0.4);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1.5rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    flex-direction: column;
-}
-
-.glass-card:hover {
-    background: rgba(30, 41, 59, 0.6);
-    border-color: rgba(16, 185, 129, 0.5); /* Emerald glow */
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-
-/* --- Tags & Details --- */
-.tech-tag {
-    background: rgba(56, 189, 248, 0.1);
-    color: #38bdf8; /* Sky Blue */
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-.details-box {
-    background: rgba(0, 0, 0, 0.3);
-    border-left: 3px solid #10b981; /* Emerald border */
-    margin-bottom: 1rem;
-}
-
-/* Update this in css/style.css */
-.glass-card {
-    /* Darker translucent base for better contrast */
-    background: rgba(15, 23, 42, 0.7); 
-    backdrop-filter: blur(12px) saturate(160%);
-    -webkit-backdrop-filter: blur(12px) saturate(160%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1.25rem;
-    padding: 1.5rem;
-    transition: all 0.4s ease;
-}
-
-.glass-card:hover {
-    background: rgba(30, 41, 59, 0.9);
-    border-color: #10b981; /* Emerald green highlight */
-    transform: translateY(-5px);
-}
-
-/* Ensure headings are bright white */
-.glass-card h3 {
-    color: #ffffff !important;
-}
-
-/* Ensure project descriptions have enough contrast */
-.glass-card p {
-    color: #cbd5e1 !important; /* Slate-300 */
-}
-
-/* --- Fix for Header Visibility --- */
-
-/* Ensure the hero text is always on top of background patterns */
-header {
-    position: relative;
-    z-index: 10;
-}
-
-/* Add a drop shadow to the heading to separate it from the complex background */
-h1 {
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
-}
-
-/* Ensure the Bio container has enough blur to hide distracting background lines */
-.glass-card {
-    background: rgba(15, 23, 42, 0.6) !important; /* Slightly darker base */
-    backdrop-filter: blur(20px) saturate(180%) !important; /* Stronger blur */
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-}
-
-/* Increase paragraph brightness */
-header p {
-    color: #e2e8f0 !important; /* Brighter slate for readability */
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-}
-/* --- Portfolio High-Contrast Enhancements --- */
-
-/* The 'Halo' effect for Project Titles */
-#project-container h3 {
-    color: #ffffff !important;
-    font-weight: 800;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* The Halo */
-    letter-spacing: -0.01em;
-}
-
-/* Enhancing the Card specifically for the Portfolio Grid */
-#project-container .glass-card {
-    background: rgba(15, 23, 42, 0.75) !important; /* Darker base for contrast */
-    backdrop-filter: blur(15px) saturate(150%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Making the "View Project Details" link pop */
-#project-container button {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    font-weight: 700;
-    letter-spacing: 0.025em;
-}
-
-/* Description text contrast */
-#project-container p {
-    color: #cbd5e1 !important; /* Slate-300 for soft but clear readability */
-    line-height: 1.6;
-}
-/* Ensure the body uses the dark geospatial background for the whole page */
-body {
+    color: #f1f5f9;
+    /* Fixed Topographic Background for Geospatial Context */
     background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
                 url('https://images.unsplash.com/photo-1625425405800-be8054129584?q=80&w=1127&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: #f1f5f9;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Glassmorphism Card Style: Fixes visibility issues */
+/* --- 3. Navigation Enhancement --- */
+nav {
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+/* --- 4. The Glassmorphism Component --- */
 .glass-card {
-    background: rgba(30, 41, 59, 0.5); /* Dark translucent background */
+    background: var(--glass-bg);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
     border-radius: 1.5rem;
-    transition: all 0.4s ease;
+    transition: var(--transition-standard);
+    will-change: transform, border-color, background;
 }
 
 .glass-card:hover {
-    background: rgba(30, 41, 59, 0.7);
-    border-color: rgba(16, 185, 129, 0.5); /* Emerald glow */
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(16, 185, 129, 0.4); /* Emerald Glow */
     transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Fix Title Visibility */
+/* --- 5. Typography & Contrast --- */
+h1, h2, h3 {
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5)); /* Separates text from complex BG */
+}
+
+/* The 'Halo' effect for titles within cards */
 .glass-card h3 {
-    color: #ffffff !important;
+    font-weight: 800;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Fix Label and Tag visibility */
-.tech-tag {
-    background: rgba(56, 189, 248, 0.1);
-    color: #38bdf8; /* Sky Blue */
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    border-radius: 6px;
+.glass-card p {
+    color: var(--slate-text);
+    font-size: 0.95rem;
 }
 
-/* --- Exquisite Filter Buttons --- */
+/* --- 6. Specialized UI Elements --- */
+.tech-tag {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--sky-brand);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    display: inline-block;
+}
+
+/* Exquisite Filter Buttons */
 .filter-btn {
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #94a3b8; /* Muted Slate */
-    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--glass-border);
+    color: #94a3b8;
+    padding: 0.6rem 1.25rem;
     border-radius: 9999px; /* Pill shape */
     font-size: 0.85rem;
     font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-standard);
     cursor: pointer;
 }
 
 .filter-btn:hover {
+    color: #fff;
+    border-color: var(--sky-brand);
     background: rgba(255, 255, 255, 0.1);
-    color: #f1f5f9;
-    border-color: rgba(56, 189, 248, 0.5); /* Sky Blue glow */
     transform: translateY(-2px);
 }
 
-/* The Active State: Emerald to Sky Blue Gradient */
+/* The Active State: Emerald to Sky Gradient */
 .active-filter {
-    background: linear-gradient(135deg, #10b981 0%, #0ea5e9 100%) !important;
-    color: #0f172a !important; /* Dark text for high contrast on the bright button */
-    border: none !important;
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    background: linear-gradient(135deg, var(--emerald-brand) 0%, var(--sky-brand) 100%);
+    color: var(--bg-dark);
+    border: none;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
     transform: scale(1.05);
 }
 
+/* Search Bar Enhancement */
+#project-search {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: white;
+    transition: var(--transition-standard);
+}
+
+#project-search:focus {
+    border-color: var(--emerald-brand);
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    outline: none;
+}
+
+/* --- 7. Utility Classes --- */
+.details-box {
+    background: rgba(0, 0, 0, 0.4);
+    border-left: 4px solid var(--emerald-brand);
+    padding: 1rem;
+    border-radius: 0 0.75rem 0.75rem 0;
+}
+
+/* Cert Carousel Opacity Transition */
+.cert-slide {
+    will-change: opacity;
+}
+
+.hidden {
+    display: none;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.opacity-100 {
+    opacity: 1;
+}
+
+/* --- 8. Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .glass-card {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2.25rem;
+    }
+}
