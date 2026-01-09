@@ -223,3 +223,32 @@ function initCarousel() {
         slides[i].classList.add('opacity-100');
     }, 4000); 
 }
+
+// Update the forEach loop in initProjectSystem inside js/scripts.js
+filtered.forEach((p, index) => {
+    const detailId = `details-${index}`;
+    container.innerHTML += `
+    <div class="glass-card flex flex-col h-full">
+        <div class="flex justify-between items-start mb-4">
+            <span class="bg-blue-500/20 text-blue-400 font-mono text-xs px-2 py-1 rounded border border-blue-500/30">${p.year}</span>
+            <span class="text-slate-400 text-[10px] uppercase font-bold tracking-widest">${p.role || 'Professional'}</span>
+        </div>
+        
+        <h3 class="font-bold text-xl text-white mb-2 leading-tight">${p.title}</h3>
+        <p class="text-slate-400 text-sm mb-4 leading-relaxed">${p.description}</p>
+        
+        <div id="${detailId}" class="hidden mb-6 mt-2 p-4 bg-slate-900/50 rounded-xl border-l-2 border-emerald-500">
+            <ul class="text-xs text-slate-300 space-y-2 list-disc list-inside">
+                ${p.fullDetails ? p.fullDetails.map(detail => `<li>${detail}</li>`).join('') : '<li>Details coming soon.</li>'}
+            </ul>
+        </div>
+
+        <button onclick="toggleDetails('${detailId}')" class="text-emerald-400 text-xs font-bold hover:text-emerald-300 transition-colors text-left mb-6">
+            + View Project Details
+        </button>
+
+        <div class="flex flex-wrap gap-2 pt-4 border-t border-white/5 mt-auto">
+            ${p.tools ? p.tools.map(t => `<span class="bg-white/5 text-slate-400 text-[10px] px-2 py-1 rounded border border-white/10 font-semibold">${t}</span>`).join('') : ''}
+        </div>
+    </div>`;
+});
