@@ -114,3 +114,32 @@ header p {
     color: #e2e8f0 !important; /* Brighter slate for readability */
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
+/* --- Portfolio High-Contrast Enhancements --- */
+
+/* The 'Halo' effect for Project Titles */
+#project-container h3 {
+    color: #ffffff !important;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* The Halo */
+    letter-spacing: -0.01em;
+}
+
+/* Enhancing the Card specifically for the Portfolio Grid */
+#project-container .glass-card {
+    background: rgba(15, 23, 42, 0.75) !important; /* Darker base for contrast */
+    backdrop-filter: blur(15px) saturate(150%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Making the "View Project Details" link pop */
+#project-container button {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    letter-spacing: 0.025em;
+}
+
+/* Description text contrast */
+#project-container p {
+    color: #cbd5e1 !important; /* Slate-300 for soft but clear readability */
+    line-height: 1.6;
+}
