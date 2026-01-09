@@ -313,4 +313,21 @@ filtered.forEach((p, index) => {
         </div>
     </div>`;
 });
+// Locate this section within your initProjectSystem function
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active state and reset muted colors for all buttons
+        filterButtons.forEach(b => {
+            b.classList.remove('active-filter');
+            // Remove standard Tailwind classes if they were hardcoded
+            b.classList.remove('bg-blue-600', 'text-white', 'bg-white', 'text-slate-600');
+        });
+
+        // Apply the exquisite active state to the clicked button
+        btn.classList.add('active-filter');
+        
+        // Execute the project rendering based on the selected year
+        renderProjects(btn.dataset.year, searchInput ? searchInput.value : '');
+    });
+});
 
