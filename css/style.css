@@ -60,3 +60,32 @@ nav {
     border-left: 3px solid #10b981; /* Emerald border */
     margin-bottom: 1rem;
 }
+
+/* Update this in css/style.css */
+.glass-card {
+    /* Darker translucent base for better contrast */
+    background: rgba(15, 23, 42, 0.7); 
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    transition: all 0.4s ease;
+}
+
+.glass-card:hover {
+    background: rgba(30, 41, 59, 0.9);
+    border-color: #10b981; /* Emerald green highlight */
+    transform: translateY(-5px);
+}
+
+/* Ensure headings are bright white */
+.glass-card h3 {
+    color: #ffffff !important;
+}
+
+/* Ensure project descriptions have enough contrast */
+.glass-card p {
+    color: #cbd5e1 !important; /* Slate-300 */
+}
+
