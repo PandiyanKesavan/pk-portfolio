@@ -184,3 +184,35 @@ body {
     padding: 4px 10px;
     border-radius: 6px;
 }
+
+/* --- Exquisite Filter Buttons --- */
+.filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8; /* Muted Slate */
+    padding: 0.6rem 1.2rem;
+    border-radius: 9999px; /* Pill shape */
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f1f5f9;
+    border-color: rgba(56, 189, 248, 0.5); /* Sky Blue glow */
+    transform: translateY(-2px);
+}
+
+/* The Active State: Emerald to Sky Blue Gradient */
+.active-filter {
+    background: linear-gradient(135deg, #10b981 0%, #0ea5e9 100%) !important;
+    color: #0f172a !important; /* Dark text for high contrast on the bright button */
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    transform: scale(1.05);
+}
+
