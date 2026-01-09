@@ -143,3 +143,44 @@ header p {
     color: #cbd5e1 !important; /* Slate-300 for soft but clear readability */
     line-height: 1.6;
 }
+/* Ensure the body uses the dark geospatial background for the whole page */
+body {
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                url('https://images.unsplash.com/photo-1625425405800-be8054129584?q=80&w=1127&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #f1f5f9;
+}
+
+/* Glassmorphism Card Style: Fixes visibility issues */
+.glass-card {
+    background: rgba(30, 41, 59, 0.5); /* Dark translucent background */
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    transition: all 0.4s ease;
+}
+
+.glass-card:hover {
+    background: rgba(30, 41, 59, 0.7);
+    border-color: rgba(16, 185, 129, 0.5); /* Emerald glow */
+    transform: translateY(-5px);
+}
+
+/* Fix Title Visibility */
+.glass-card h3 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Fix Label and Tag visibility */
+.tech-tag {
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8; /* Sky Blue */
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
