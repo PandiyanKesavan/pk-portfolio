@@ -89,3 +89,28 @@ nav {
     color: #cbd5e1 !important; /* Slate-300 */
 }
 
+/* --- Fix for Header Visibility --- */
+
+/* Ensure the hero text is always on top of background patterns */
+header {
+    position: relative;
+    z-index: 10;
+}
+
+/* Add a drop shadow to the heading to separate it from the complex background */
+h1 {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+/* Ensure the Bio container has enough blur to hide distracting background lines */
+.glass-card {
+    background: rgba(15, 23, 42, 0.6) !important; /* Slightly darker base */
+    backdrop-filter: blur(20px) saturate(180%) !important; /* Stronger blur */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Increase paragraph brightness */
+header p {
+    color: #e2e8f0 !important; /* Brighter slate for readability */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
