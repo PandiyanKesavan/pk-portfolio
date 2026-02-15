@@ -1,6 +1,19 @@
 [
     {
     "year": "2025",
+    "title": "City of Brandon Stormwater Master Plan",
+    "description": "Designed and implemented the City’s enterprise stormwater GIS, including schemas, domains, attribute rules, and versioning, data capture and validation.",
+    "fullDetails": [
+      "Designed the City’s enterprise stormwater GIS database using Esri, including schemas, domains, attribute rules, and versioning workflows.",
+      "Led data capture, LiDAR validation, and field verification to build a complete, accurate stormwater asset inventory.",
+      "Assigned areas, coordinated data collection teams, and developed a tracking application to monitor dataset and budget progress.",
+      "Managed enterprise geodatabase performance, multi-user editing, and data maintenance workflows."
+    ],
+    "tools": ["ArcGIS Pro","ArcGIS Enterprise (versioned editing)","ArcGIS Field Maps","ArcGIS Experience Builder", "ArcGIS Data Reviewer / Attribute Rules"],
+    "role": "GIS Lead / Enterprise Database Developer"
+  },
+{
+    "year": "2025",
     "title": "CMU Water & Wastewater Improvements",
     "description": "Unified and standardized water and wastewater GIS datasets to support planning and analysis; integrated billing datasets.",
     "fullDetails": [
@@ -291,6 +304,7 @@
     "role": "Remote Sensing Analyst"
   }
 ]
+
 
 
 
