@@ -1,6 +1,18 @@
 [
   {
     "year": "2024",
+    "title": "TDOT Stormwater Infrastructure Assessment, Tennessee",
+    "description": "GIS Analyst / GIS Developer. Designed and developed a statewide Cadastral and Flood Web GIS Viewer for real-time access to geospatial data.",
+    "fullDetails": [
+      "Built interactive mapping functionalities using ArcGIS JavaScript API, integrated Enterprise Geodatabase, and streamlined ArcGIS services.",
+      "Incorporated live data feeds from FEMA and state agencies for situational awareness.",
+      "Led testing, optimization, and conducted training for MDEM staff."
+    ],
+    "tools": ["Enterprise Geodatabase", Experience Builder, Dashboard],
+    "role": "Web GIS Developer"
+  },  
+  {
+    "year": "2024",
     "title": "MDEM Website Viewer Development",
     "description": "Statewide Mississippi – Web GIS Developer. Designed and developed a statewide Cadastral and Flood Web GIS Viewer for real-time access to geospatial data.",
     "fullDetails": [
@@ -264,6 +276,7 @@
     "role": "Remote Sensing Analyst"
   }
 ]
+
 
 
 
