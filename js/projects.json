@@ -10,7 +10,7 @@
       "Managed enterprise geodatabase performance, multi-user editing, and data maintenance workflows."
     ],
     "tools": ["ArcGIS Pro","ArcGIS Enterprise (versioned editing)","ArcGIS Field Maps","ArcGIS Experience Builder", "ArcGIS Data Reviewer / Attribute Rules"],
-    "role": "GIS Lead / Enterprise Database Developer"
+    "role": "GIS Lead"
   },
 {
     "year": "2025",
@@ -304,6 +304,7 @@
     "role": "Remote Sensing Analyst"
   }
 ]
+
 
 
 
