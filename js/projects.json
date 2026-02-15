@@ -1,4 +1,18 @@
 [
+    {
+    "year": "2025",
+    "title": "CMU Water & Wastewater Improvements",
+    "description": "Unified and standardized water and wastewater GIS datasets to support planning and analysis; integrated billing datasets.",
+    "fullDetails": [
+      "Compiled and standardized all water and wastewater GIS layers into a unified geodatabase to support utility planning and analysis.",
+      "Geocoded and validated water and sewer billing addresses, integrating service area boundaries and generating deliverables (KML, Excel, Shapefile).",
+      "Updated water and wastewater service areas, pump station catchments, and utility consumption datasets to improve billing accuracy and demand analysis.",
+      "Prepared water and wastewater exhibit maps, improvement maps, and consumption maps for engineering and planning needs.",
+      "Developed Python automation tools to streamline billing data extraction and support utility consumption and rate analysis workflows."
+    ],
+    "tools": ["ArcGIS Pro","ArcGIS Enterprise"],
+    "role": "GIS Data Specialist"
+  },
   {
     "year": "2025",
     "title": "TDOT Stormwater Infrastructure Assessment, Tennessee",
@@ -277,6 +291,7 @@
     "role": "Remote Sensing Analyst"
   }
 ]
+
 
 
 
