@@ -252,11 +252,16 @@
   {
     "year": "2014",
     "title": "Texture Driven Regional Based Data Analysis",
-    "description": "Remote Sensing Analyst applying image segmentation and SVM classification.",
+    "description": "Remote Sensing Researcher applying image segmentation and SVM classification.",
     "fullDetails": [
-      "Designed image segmentation techniques, applied SVM classification, and performed post-classification change detection in South Chennai."
+      "Designed and applied image segmentation techniques to partition high‑resolution satellite imagery into meaningful texture‑based regions.",
+      "Classified segmented imagery using Support Vector Machine (SVM) supervised classification to improve thematic accuracy.",
+      "Conducted post‑classification change detection to analyze land‑use and land‑cover changes in the South Chennai region.",
+      "Evaluated class distribution, segmentation quality, and classification performance to refine model outputs.",
+      "Produced maps, analytical summaries, and documentation supporting regional environmental and urban change assessment."
     ],
     "tools": ["Image Segmentation", "SVM", "Remote Sensing"],
     "role": "Remote Sensing Analyst"
   }
 ]
+
