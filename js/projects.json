@@ -1,4 +1,60 @@
 [
+  
+  {
+    "year": "2026",
+    "title": "Yazoo City PSC GIS Modernization",
+    "description": "Led an enterprise GIS modernization effort and delivered a unified geodatabase for water, sewer, and electric systems, deploying ArcGIS Enterprise and real-time field apps.",
+    "fullDetails": [
+      "Led enterprise GIS modernization and built a unified geodatabase for water, sewer, and electric systems.",
+      "Standardized schemas, domains, and attribute rules to improve accuracy and auditability.",
+      "Deployed ArcGIS Enterprise and delivered web/mobile apps for real-time field operations.",
+      "Managed data digitization, QA/QC, GPS verification, and operational dashboards.",
+      "Implemented secure access controls and provided staff training and ongoing technical support."
+    ],
+    "tools": ["ArcGIS Enterprise","ArcGIS Pro","ArcGIS Field Maps / Survey123","ArcGIS Dashboards"]
+    "role": "GIS Project Lead"
+  },
+  {
+    "year": "2026",
+    "title": "City of Meridian Water & Wastewater Asset Management",
+    "description": "Built a GIS-centered asset management framework for water and wastewater systems, standardizing asset inventories, enforcing persistent IDs, and integrating 2D/3D GIS with Cityworks.",
+    "fullDetails": [
+      "Built a GIS-based asset framework for horizontal and vertical utility infrastructure with standardized inventories and hierarchical structures.",
+      "Implemented persistent asset IDs and GIS relationship classes to connect facilities, equipment, inspections, and Cityworks work orders.",
+      "Developed a 3D GIS model of treatment facilities to improve asset visualization, process flow understanding, and maintenance planning.",
+      "Provided training, documentation, and workflow support to drive adoption of 2D/3D GIS and Cityworks tools, improving access to asset history."
+    ],
+    "tools": ["ArcGIS Pro","ArcGIS Enterprise","Cityworks","Esri Utility Network","ArcGIS Online","ArcGIS Field Maps","ArcGIS Experience Builder","ArcGIS Scene Viewer / 3D"]
+    "role": "GIS / Cityworks Developer"
+  },
+  {
+    "year": "2025",
+    "title": "City of Brandon Stormwater Master Plan",
+    "description": "Designed and implemented the City’s enterprise stormwater GIS, including schemas, domains, attribute rules, and versioning, data capture and validation",
+    "fullDetails": [
+      "Designed the City’s enterprise stormwater GIS database using Esri, including schemas, domains, attribute rules, and versioning workflows.",
+      "Led data capture, LiDAR validation, and field verification to build a complete, accurate stormwater asset inventory.",
+      "Assigned areas, coordinated data collection teams, and developed a tracking application to monitor dataset and budget progress.",
+      "Managed enterprise geodatabase performance, multi-user editing, and data maintenance workflows.",
+      "Prepared the database for long-term stormwater asset management, MS4 compliance, and hydrologic/hydraulic modeling readiness."
+    ],
+    "tools": ["ArcGIS Pro","ArcGIS Enterprise (versioned editing)","ArcGIS Field Maps","ArcGIS Experience Builder","ArcGIS Data Reviewer / Attribute Rules"],
+    "role": "GIS Lead / Enterprise Database Developer"
+  },
+  {
+    "year": "2025",
+    "title": "CMU Water & Wastewater Improvements",
+    "description": "Unified and standardized water and wastewater GIS datasets to support planning and analysis; integrated billing datasets.",
+    "fullDetails": [
+      "Compiled and standardized all water and wastewater GIS layers into a unified geodatabase to support utility planning and analysis.",
+      "Geocoded and validated water and sewer billing addresses, integrating service area boundaries and generating deliverables (KML, Excel, Shapefile).",
+      "Updated water and wastewater service areas, pump station catchments, and utility consumption datasets to improve billing accuracy and demand analysis.",
+      "Prepared water and wastewater exhibit maps, improvement maps, and consumption maps for engineering and planning needs.",
+      "Developed Python automation tools to streamline billing data extraction and support utility consumption and rate analysis workflows."
+    ],
+    "tools": ["ArcGIS Pro","ArcGIS Enterprise","ArcPy/Python","Address Geocoding/Locator"],
+    "role": "GIS Analyst / Data Specialist"
+  }
   {
     "year": "2025",
     "title": "TDOT Stormwater Infrastructure Assessment, Tennessee",
@@ -9,7 +65,7 @@
       "Updated and maintained hyperlink references for stormwater structures, pipes, culverts, and phase-based datasets within ArcGIS web feature layers and ShareFile repositories.",
       "Provided GIS support by exporting datasets, calculating coordinates, validating field data, and assisting field teams with accurate stormwater asset documentation."
     ],
-    "tools": ["ArcGIS JS API", "Enterprise Geodatabase", "FEMA Data"],
+    "tools": ["Enterprise Geodatabase"],
     "role": "Web GIS Developer"
   },
   {
@@ -277,6 +333,7 @@
     "role": "Remote Sensing Analyst"
   }
 ]
+
 
 
 
