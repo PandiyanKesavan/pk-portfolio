@@ -2,11 +2,12 @@
   {
     "year": "2025",
     "title": "TDOT Stormwater Infrastructure Assessment, Tennessee",
-    "description": "GIS Analyst / GIS Developer. Designed and developed a statewide Cadastral and Flood Web GIS Viewer for real-time access to geospatial data.",
+    "description": "GIS Analyst / GIS Developer. Designed and developed the stormwater geodatabase, configuring fields, material types, and data structures to support consistent asset data collection.",
     "fullDetails": [
-      "Built interactive mapping functionalities using ArcGIS JavaScript API, integrated Enterprise Geodatabase, and streamlined ArcGIS services.",
-      "Incorporated live data feeds from FEMA and state agencies for situational awareness.",
-      "Led testing, optimization, and conducted training for MDEM staff."
+      "Built and configured Experience Builder and field collection applications to support real-time stormwater structure and pipe inventory workflows.",
+      "Created dashboards to track field collection progress, dataset updates, and project status in real time.",
+      "Updated and maintained hyperlink references for stormwater structures, pipes, culverts, and phase-based datasets within ArcGIS web feature layers and ShareFile repositories.",
+      "Provided GIS support by exporting datasets, calculating coordinates, validating field data, and assisting field teams with accurate stormwater asset documentation."
     ],
     "tools": ["ArcGIS JS API", "Enterprise Geodatabase", "FEMA Data"],
     "role": "Web GIS Developer"
@@ -276,6 +277,7 @@
     "role": "Remote Sensing Analyst"
   }
 ]
+
 
 
 
