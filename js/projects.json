@@ -8,7 +8,7 @@
       "Incorporated live data feeds from FEMA and state agencies for situational awareness.",
       "Led testing, optimization, and conducted training for MDEM staff."
     ],
-    "tools": ["Enterprise Geodatabase", Experience Builder, Dashboard],
+    "tools": ["Enterprise Geodatabase", "Experience Builder", "Dashboard"],
     "role": "Web GIS Developer"
   },  
   {
@@ -276,6 +276,7 @@
     "role": "Remote Sensing Analyst"
   }
 ]
+
 
 
 
